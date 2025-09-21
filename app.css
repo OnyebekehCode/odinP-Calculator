@@ -1,0 +1,50 @@
+body{
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: antiquewhite;
+    margin: 16px;
+    padding-left: 16px;
+    padding-top: 24px;
+    height: 320px;
+    width: 176px
+}
+
+#div-container{
+    display: flex;
+    flex-wrap: wrap;
+   
+}
+
+.buttons{
+    border: 1px solid  blue;
+    background-color: rgb(62, 135, 245);
+    color: rgb(34, 1, 42);
+    width: 43.3px;
+    height: 42.4px;
+    padding: 0;
+    border-radius: 8%;
+    box-sizing: border-box;
+    margin: 4px;
+
+}
+.screen-buttons{
+    border: 1px solid  blue;
+    background-color: antiquewhite;
+    width: 96px;
+    height: 42.4px;
+    border-radius: 8%;
+    box-sizing: border-box;
+    margin: 4px;
+}
+.clear-buttons{
+    border: 1px solid  blue;
+    background-color: rgb(112, 40, 236);
+    color: rgb(34, 1, 42);
+    width: 42px;
+    height: 42.4px;
+    padding: 0;
+    border-radius: 8%;
+    box-sizing: border-box;
+    margin: 8px;
+
+}
