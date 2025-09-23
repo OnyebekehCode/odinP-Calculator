@@ -1,48 +1,63 @@
+//get all elements needed
 const buttons = document.getElementsByClassName("buttons")
+const operbuttons= document.getElementsByClassName("oper-buttons")
+const equalbutton = document.getElementsByClassName("equalbutton")
 const display = document.getElementsByClassName("screen-button")
-const clearbtn = document.getElementsByClassName("clear-button")
-//Add and display result once two numbers are calculated(continue if more numbers are added)
+const clearbtn = document.getElementById("clear-button")
 
- /*function add(a, b, c){
+//asign variables neccessary
+let numbers;
+let operator;
+let numArr = [];
+let displayScreen = [];
+
+
+//button to listen for different click events
+
+//listen for click on buttons for textcontent  on only numbers 
+for (let i = 0; i < buttons.length; i++) {
+ buttons[i].addEventListener("click", function(){
+        numArr.push(buttons[i].textContent)
+    return console.log(numArr)
+})    
+}
+
+//clear the array holding inputs
+ clearbtn.addEventListener("click", function(){
+      numArr.splice(0, numArr.length)
+    return console.log(numArr)})
+//test if the two buttons works together and as expected
+setTimeout(() => {
+    console.log(numArr)
+}, 10000); 
+
+//neccessary functions
+
+//add function
+ function add(a, b, c){
     
     if(c === "+"){
     return a + b
     }else { return "Error"
 }
 }
-console.log(add(2, 4 , "+"))
-
-
-
-
-//substract and display result once two numbers are calculated(continue if more numbers are added)
-
+//subtract function
 function subtract(a, b, c){
     if(c === "-"){
     return a - b
     }else { return "Error"
 }
 }
-console.log(subtract(2,4, "-"))
-
-
-//Divide and display result once two numbers are calculated(continue if more numbers are added)
-
+//division function
 function divide(a, b, c){
     if(c === "/"){
     return a / b
     }else { return "Error"
 }}
-console.log(divide(2,4, "/"))
-
-
-
-//multiply and display result once two numbers are calculated(continue if more numbers are added)
-
+//multiplication function 
 function multiply(a, b, c){
     if(c === "*"){
     return a * b
     }else { return "Error"
 }
 }
-console.log(multiply(2,4, "*"))*/
