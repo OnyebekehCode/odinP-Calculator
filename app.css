@@ -1,4 +1,13 @@
 body{
+    font-family: 'Times New Roman', Times, serif;
+}
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.calculator-container{
     border: 1px solid black;
     border-radius: 8px;
     background-color: antiquewhite;
@@ -6,7 +15,9 @@ body{
     padding-left: 16px;
     padding-top: 24px;
     height: 320px;
-    width: 176px
+    width: 176px;
+
+
 }
 
 #div-container{
@@ -27,7 +38,7 @@ body{
     margin: 4px;
 
 }
-.screen-buttons{
+.screen-button{
     border: 1px solid  blue;
     background-color: antiquewhite;
     width: 96px;
@@ -36,7 +47,7 @@ body{
     box-sizing: border-box;
     margin: 4px;
 }
-.clear-buttons{
+.clear-button{
     border: 1px solid  blue;
     background-color: rgb(112, 40, 236);
     color: rgb(34, 1, 42);
