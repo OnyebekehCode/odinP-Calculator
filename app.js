@@ -14,14 +14,20 @@ let displayScreen = [];
 
 //button to listen for different click events
 
-//listen for click on buttons for textcontent  on only numbers 
+//listen for click on buttons for textcontent containing only numbers 
 for (let i = 0; i < buttons.length; i++) {
  buttons[i].addEventListener("click", function(){
         numArr.push(buttons[i].textContent)
     return console.log(numArr)
 })    
 }
-
+//listen for click on buttons for text content containing only operators
+for (let i = 0; i < operbuttons.length; i++) {
+ operbuttons[i].addEventListener("click", function(){
+        numArr.push(operbuttons[i].textContent)
+    return console.log(numArr)
+})    
+}
 //clear the array holding inputs
  clearbtn.addEventListener("click", function(){
       numArr.splice(0, numArr.length)
@@ -30,6 +36,9 @@ for (let i = 0; i < buttons.length; i++) {
 setTimeout(() => {
     console.log(numArr)
 }, 10000); 
+// test calculation using values in the array
+let seperatedVal = numArr.split("")
+console.log(seperatedVal)
 
 //neccessary functions
 
