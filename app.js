@@ -10,8 +10,6 @@ let firstNumArr = [];
 let secondNumArr = [];
 let calcArr = [];
 
-
-
 for (let i = 0; i < operbuttons.length; i++) {
     operbuttons[i].addEventListener("click", function(){
        operator.push(operbuttons[i].textContent);   
@@ -31,10 +29,7 @@ for (let i = 0; i < buttons.length; i++) {
         }
        return secondNumArr.join("")  
     })}}
-
-setTimeout(() => {
-     console.log(calcArr) 
-}, 8000);   
+  
 if (firstNumArr != null) {
        calcArr.push(firstNumArr, operator) 
 }else if
@@ -42,10 +37,7 @@ if (firstNumArr != null) {
         calcArr.push(firstNumArr, operator, secondNumArr);
     }else
         console.log("relax, you are there yet")
-
-setTimeout(() => {
-     console.log(calcArr) 
-}, 8000);   
+ 
 //add function
  function add(a, b){
     return a + b
@@ -63,8 +55,3 @@ function divide(a, b){
 function multiply(a, b){
     return a * b
 }
-
-
-equalbutton.addEventListener("click", function() {
-    calcArr(numArr);
-});
