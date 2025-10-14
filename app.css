@@ -26,7 +26,7 @@ body{
    
 }
 
-.buttons,.oper-buttons,.equalbutton{
+.buttons,.oper-buttons{
     border: 1px solid  blue;
     background-color: rgb(62, 135, 245);
     color: rgb(34, 1, 42);
@@ -37,7 +37,41 @@ body{
     box-sizing: border-box;
     margin: 4px;
 }
-.screen-button{
+
+#screen-button:focus{
+        color: rgb(218, 43, 16);
+}
+#equalbutton:hover{
+    background-color: aliceblue;
+    color: black;
+}
+.buttons:hover{
+    background-color: aliceblue;
+}
+.oper-buttons:hover{
+    background-color: aliceblue;
+}
+#clear-button:hover{
+    background-color: aliceblue;
+    color: black;
+}
+.oper-buttons{
+     border: 1px solid  rgba(7, 35, 118, 0.789);
+    background-color: rgba(7, 47, 167, 0.568);
+ ;
+}
+#equalbutton{
+    border: 1px solid  rgba(68, 96, 160, 0.727);
+    background-color: rgb(3, 29, 124);
+    color: rgb(222, 209, 226);
+    width: 43.3px;
+    height: 42.4px;
+    padding: 0;
+    border-radius: 8%;
+    box-sizing: border-box;
+    margin: 4px;
+}
+#screen-button{
     border: 1px solid  blue;
     background-color: antiquewhite;
     width: 96px;
@@ -48,8 +82,8 @@ body{
 }
 #clear-button{
     border: 1px solid  blue;
-    background-color: rgb(112, 40, 236);
-    color: rgb(34, 1, 42);
+    background-color: rgb(3, 29, 124);
+    color: rgb(222, 209, 226);
     width: 42px;
     height: 42.4px;
     padding: 0;
