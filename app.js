@@ -1,6 +1,6 @@
 //global variables for important inputs
-let firstNum = null
-let secNum = null
+let firstNum = ''
+let secNum = ''
 let operator = null
 let numbers = document.getElementsByClassName("buttons");
 let operNumbers = document.getElementsByClassName("oper-buttons")
@@ -12,27 +12,30 @@ display = document.getElementById("screen-button")
 //for numbers
 for (let i = 0; i < numbers.length; i++) {
   numbers[i].addEventListener("click", function() {
-    const clickTextContent = numbers[i].textContent;
-    display.textContent = clickTextContent;
+    const clickedNum = numbers[i].textContent;
 
-    if (firstNum === null && operator === null) {
-      firstNum = Number(clickTextContent);
+    if (operator === null) {
+      firstNum += clickedNum;
+      display.textContent = firstNum;
+    } else {
+      secNum += clickedNum;
+      display.textContent = secNum;
     }
-    if (firstNum !== null && operator !== null) {
-      secNum = Number(clickTextContent);
-      
-    }
-  })
+  });
 }
-//for operator
- for (let i = 0; i < operNumbers.length; i++)
-    operNumbers[i].addEventListener("click", function(){
-     const clickedOper = operNumbers[i].textContent;
-       display.textContent = clickedOper;
 
-       operator = clickedOper
-       return operator
-    })
+// For operator buttons
+for (let i = 0; i < operNumbers.length; i++) {
+  operNumbers[i].addEventListener("click", function() {
+    if (firstNum !== '' && operator !== null && secNum !== '') {
+      const result = operate();
+      firstNum = result; 
+      secNum = ''; 
+    } 
+    operator = operNumbers[i].textContent;
+    display.textContent = operator;
+  });
+}
 
 //for equalsbutton
 calculate.addEventListener("click", operate)
@@ -62,13 +65,13 @@ function divideNum(firstNum, secNum){
 // and then calls one of the above functions on the numbers.
 function operate (){
     if (operator === "+"){
-        return display.textContent = addNum(firstNum, secNum);
+        return display.textContent = addNum(parseFloat(firstNum), parseFloat(secNum));
     } else if (operator === "-"){
-        return display.textContent = subtractNum(firstNum, secNum);
+        return display.textContent = subtractNum(parseFloat(firstNum), parseFloat(secNum));
     } else if (operator === "*"){
-        return display.textContent = multiplyNum(firstNum, secNum);
+        return display.textContent = multiplyNum(parseFloat(firstNum), parseFloat(secNum));
     } else if (operator === "/"){
-        return display.textContent = divideNum(firstNum, secNum);
+        return display.textContent = divideNum(parseFloat(firstNum), parseFloat(secNum));
     } else {
         return display.textContent = "Sci. Err";
     }
@@ -77,9 +80,9 @@ function operate (){
 
 //function to clear all
 function clearAll(){
-    firstNum;
-    operator;
-    secNum;
-    display.textContent = "|"
+    firstNum = ''
+    operator = null
+    secNum = ''
+    display.textContent = "0"
 }
 
